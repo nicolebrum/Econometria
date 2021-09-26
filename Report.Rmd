@@ -1,0 +1,58 @@
+---
+title: "SE308 - Relatório 1"
+author: "Nicole Martinelli Brum - GRR20192493"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+## Introdução
+
+Este é um relatório para a disciplina de Econometria do curso de Ciências Econômicas da UFPR, ministrada pelo professor Dr. Flávio de Oliveira Gonçalves no primeiro semestre do calendário letivo de 2021. O objetivo do relatório é apresentar uma análise de alguns dados básicos do ENADE de 2018, a fim de realizar comparações entre o desempenhos dos alunos de Ciências Econômicas que participaram da prova.
+
+A análise foi divida em três partes:
+
+1. Cálculo da média dos participantes de Ciências Econômicas
+2. Cálculo da média dos participantes de Ciências Econômicas por turno
+3. Análise e interpretação dos resultados
+
+
+Os cálculos e leitura de dados para a análise foram feitos com o software R Studio Cloud, utilizando a linguagem R. O código para o cálculo dos itens listados acima será apresentado em conjunto com suas respectivas explicações, e o script integral pode ser acessado em <>. Os dados e metadados foram obtidos através do próprio site do ENADE, em <>.
+
+
+
+## Cálculo da média dos participantes de Ciências Econômicas
+
+Os dados utilizados foram obtidos através do link fornecido na ficha 2 da disciplina. Para utilizar os dados no R Studio Cloud, foi necessário fazer o upload do arquivo de dados na própria ferramenta.
+
+
+
+Segundo o dicionário de dados do ENADE 2018, também contido no pacote baixado através do link fornecido na ficha 2, o código que identifica os alunos de Ciências Econômicas nos dados fornecidos é o número 13 na coluna <>. Portanto, todos os cálculos devem ser realizados apenas com as linhas que contém o número 13 na coluna <>. Para excluir dados desnecessários, realizou-se uma filtragem através do LibreOffice Calc, na qual foi gerada uma nova planilha apenas com valores referentes aos alunos de Ciências Econômicas.
+
+
+
+Para a leitura dos dados, utilizou-se a função de leitura de arquivos .csv no R. O arquivo fornecido está originalmente em formato de texto plano (.txt), porém, visto que está tabulado através do caracter de ponto e vírgula, pode ser convertido para .csv sem problemas, sendo suficiente renomear a extensão do arquivo. Converter o arquivo para este formato facilita sua leitura e manipulação, bem como visualização através de softwares como o Excel ou LibreOffice. Visto que o formato .csv está também associado à tabulação com vírgulas, é necessário passar ao R como parâmetro o tipo de divisor dos dados. Então, o código para a leitura do .csv é realizado com:
+
+```{r readData}
+enade_data <- read.csv("microdados_enade_2018.csv", sep=";")
+```
+
+
+
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
